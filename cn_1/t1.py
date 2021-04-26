@@ -11,9 +11,9 @@ plt.style.use('dark_background')
 
 #print(os.getcwd()) #현재경로확인
 #print(os.path.abspath('.')) #절대경로확인
-#img_ori = cv2.imread('D:\회사\스터디\python\carnum\cn_2\license_plate_recognition-master\1.jpg')
-img_ori = cv2.imread('1.jpg') #이미지 불러오기
 
+#img_ori = cv2.imread('1.jpg') #이미지 불러오기
+img_ori = cv2.imread("cn_2/license_plate_recognition-master/3.jpg")
 
 height, width, channel = img_ori.shape #사이즈 값 변수에 넣어줌
 #print(height, width, channel)
