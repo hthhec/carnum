@@ -13,7 +13,9 @@ plt.style.use('dark_background')
 #print(os.path.abspath('.')) #절대경로확인
 
 #img_ori = cv2.imread('1.jpg') #이미지 불러오기
-img_ori = cv2.imread("cn_2/license_plate_recognition-master/3.jpg")
+img_ori = cv2.imread("cn_2/license_plate_recognition-master/2.jpg")
+
+#lng = 'eng'
 
 height, width, channel = img_ori.shape #사이즈 값 변수에 넣어줌
 #print(height, width, channel)
@@ -325,6 +327,9 @@ for i, plate_img in enumerate(plate_imgs):
     img_result = cv2.copyMakeBorder(img_result, top=10, bottom=10, left=10, right=10, borderType=cv2.BORDER_CONSTANT, value=(0,0,0))
 
     chars = pytesseract.image_to_string(img_result, lang='kor', config='--psm 7 --oem 0')
+    #chars = pytesseract.image_to_string(img_result, lang='eng', config='--psm 7 --oem 0')
+    #chars = pytesseract.image_to_string(img_result, lang=lng, config='--psm 7 --oem 0')
+
     #pytesseract에서 잘 읽을 수 있도록 한다.
     #언어는 kor
     #psm 7 이미지 안에 언어가 한줄이다라는 고정 조건
